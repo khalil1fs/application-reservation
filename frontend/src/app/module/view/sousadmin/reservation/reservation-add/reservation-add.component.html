@@ -1,0 +1,119 @@
+<div class="addContainer">
+
+  <div class="modalHeader">
+    <h2 mat-dialog-title> New Reservation</h2>
+    <button mat-icon-button (click)="close()" aria-label="Close dialog">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+
+    <div class="mt-4"></div>
+
+    <div class="row">
+    
+<div class="row">
+         <div class="col-xl-10 col-lg-10 col-md-10 col-sm-10 mb-2">
+                <mat-form-field class="example-full-width" appearance="outline">
+                  <mat-label> client</mat-label>
+                  <mat-select [(ngModel)]="selectedReservation.client_id" required>
+                    <mat-option *ngFor="let i of clients" [value]="i.id">
+                      {{i.id}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              
+              <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 mt-2 mb-2">
+                <button mat-flat-button color="primary" class="btn-space" (click)="newClient()">
+                  <mat-icon class="col-white">add</mat-icon>
+                </button>
+              </div>
+     </div>
+
+    
+<div class="row">
+         <div class="col-xl-10 col-lg-10 col-md-10 col-sm-10 mb-2">
+                <mat-form-field class="example-full-width" appearance="outline">
+                  <mat-label> chambre</mat-label>
+                  <mat-select [(ngModel)]="selectedReservation.chambre_id" required>
+                    <mat-option *ngFor="let i of chambres" [value]="i.id">
+                      {{i.id}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              
+              <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 mt-2 mb-2">
+                <button mat-flat-button color="primary" class="btn-space" (click)="newChambre()">
+                  <mat-icon class="col-white">add</mat-icon>
+                </button>
+              </div>
+     </div>
+
+   <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 mb-1">
+          <div class="text-inside">
+            <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Reference</mat-label>
+              <input matInput [(ngModel)]="selectedReservation.reference" />
+            </mat-form-field>
+          </div>
+   </div>
+
+       <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 mb-1">
+              <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Status</mat-label>
+                <mat-select>
+                  <mat-option [value]="1" [(ngModel)]="selectedReservation.status" >
+                         1
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+       </div>
+
+   <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 mb-1">
+          <div class="text-inside">
+            <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Day number</mat-label>
+              <input matInput [(ngModel)]="selectedReservation.dayNumber" />
+            </mat-form-field>
+          </div>
+   </div>   <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 mb-1">
+          <div class="text-inside">
+                <mat-form-field class="example-full-width mb-3" appearance="outline">
+                  <mat-label>Date debut</mat-label>
+                  <input matInput [owlDateTimeTrigger]="date1"  [(ngModel)]="selectedReservation.dateDebut" [owlDateTime]="date1">
+                  <mat-icon matSuffix [owlDateTimeTrigger]="date1" class="date-icon">today</mat-icon>
+                  <owl-date-time #date1></owl-date-time>
+                </mat-form-field>       </div>
+</div>
+
+   <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 mb-1">
+          <div class="text-inside">
+                <mat-form-field class="example-full-width mb-3" appearance="outline">
+                  <mat-label>Date fin</mat-label>
+                  <input matInput [owlDateTimeTrigger]="date2"  [(ngModel)]="selectedReservation.dateFin" [owlDateTime]="date2">
+                  <mat-icon matSuffix [owlDateTimeTrigger]="date2" class="date-icon">today</mat-icon>
+                  <owl-date-time #date2></owl-date-time>
+                </mat-form-field>       </div>
+</div>
+
+   <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 mb-1">
+           <div class="text-inside">
+                <mat-slide-toggle [(ngModel)]="selectedReservation.valid">Valid</mat-slide-toggle>
+           </div>
+   </div>
+
+
+	</div>
+
+<div class="btn-sec mt-4">
+  
+  <button class="btn-space" mat-raised-button (click)="save()" color="primary">
+    Save
+  </button>
+  <button mat-raised-button color="warn" (click)="close()" tabindex="-1">
+    Cancel
+  </button>
+
+</div>
+  </div>

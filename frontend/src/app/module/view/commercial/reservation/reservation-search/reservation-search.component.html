@@ -1,0 +1,145 @@
+<div class="addContainer">
+
+  <div class="modalHeader">
+    <h2 mat-dialog-title> Search Reservation</h2>
+    <button mat-icon-button (click)="close()" aria-label="Close dialog">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+
+    <div class="mt-4"></div>
+
+
+  <div mat-dialog-content>    <div class="row">
+   <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 mb-1">
+          <div class="text-inside">
+            <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Reference Contain</mat-label>
+              <input matInput [(ngModel)]="selectedReservation.reference__like" />
+            </mat-form-field>
+          </div>
+   </div>
+
+   <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 mb-1">
+          <div class="text-inside">
+            <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Reference</mat-label>
+              <input matInput [(ngModel)]="selectedReservation.reference" />
+            </mat-form-field>
+          </div>
+   </div>
+
+       <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 mb-1">
+              <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Status</mat-label>
+                <mat-select>
+                  <mat-option [value]="1" [(ngModel)]="selectedReservation.status" >
+                         1
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+       </div>
+
+   <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 mb-1">
+          <div class="text-inside">
+            <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Day number Min</mat-label>
+              <input matInput [(ngModel)]="selectedReservation.dayNumber__lt" />
+            </mat-form-field>
+          </div>
+   </div>   <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 mb-1">
+          <div class="text-inside">
+            <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Day number</mat-label>
+              <input matInput [(ngModel)]="selectedReservation.dayNumber" />
+            </mat-form-field>
+          </div>
+   </div>   <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 mb-1">
+          <div class="text-inside">
+            <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Day number Max</mat-label>
+              <input matInput [(ngModel)]="selectedReservation.dayNumber__gte" />
+            </mat-form-field>
+          </div>
+   </div>   <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 mb-1">
+          <div class="text-inside">
+                <mat-form-field class="example-full-width mb-3" appearance="outline">
+                  <mat-label>Date debut Min</mat-label>
+                  <input matInput [owlDateTimeTrigger]="datel1"  [(ngModel)]="selectedReservation.dateDebut__lt" [owlDateTime]="datel1">
+                  <mat-icon matSuffix [owlDateTimeTrigger]="datel1" class="date-icon">today</mat-icon>
+                  <owl-date-time #datel1></owl-date-time>
+                </mat-form-field>       </div>
+</div>
+
+   <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 mb-1">
+          <div class="text-inside">
+                <mat-form-field class="example-full-width mb-3" appearance="outline">
+                  <mat-label>Date debut</mat-label>
+                  <input matInput [owlDateTimeTrigger]="date1"  [(ngModel)]="selectedReservation.dateDebut" [owlDateTime]="date1">
+                  <mat-icon matSuffix [owlDateTimeTrigger]="date1" class="date-icon">today</mat-icon>
+                  <owl-date-time #date1></owl-date-time>
+                </mat-form-field>       </div>
+</div>
+
+   <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 mb-1">
+          <div class="text-inside">
+                <mat-form-field class="example-full-width mb-3" appearance="outline">
+                  <mat-label>Date debut Max</mat-label>
+                  <input matInput [owlDateTimeTrigger]="dateg1"  [(ngModel)]="selectedReservation.dateDebut__gte" [owlDateTime]="dateg1">
+                  <mat-icon matSuffix [owlDateTimeTrigger]="dateg1" class="date-icon">today</mat-icon>
+                  <owl-date-time #dateg1></owl-date-time>
+                </mat-form-field>       </div>
+</div>
+
+   <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 mb-1">
+          <div class="text-inside">
+                <mat-form-field class="example-full-width mb-3" appearance="outline">
+                  <mat-label>Date fin Min</mat-label>
+                  <input matInput [owlDateTimeTrigger]="datel2"  [(ngModel)]="selectedReservation.dateFin__lt" [owlDateTime]="datel2">
+                  <mat-icon matSuffix [owlDateTimeTrigger]="datel2" class="date-icon">today</mat-icon>
+                  <owl-date-time #datel2></owl-date-time>
+                </mat-form-field>       </div>
+</div>
+
+   <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 mb-1">
+          <div class="text-inside">
+                <mat-form-field class="example-full-width mb-3" appearance="outline">
+                  <mat-label>Date fin</mat-label>
+                  <input matInput [owlDateTimeTrigger]="date2"  [(ngModel)]="selectedReservation.dateFin" [owlDateTime]="date2">
+                  <mat-icon matSuffix [owlDateTimeTrigger]="date2" class="date-icon">today</mat-icon>
+                  <owl-date-time #date2></owl-date-time>
+                </mat-form-field>       </div>
+</div>
+
+   <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 mb-1">
+          <div class="text-inside">
+                <mat-form-field class="example-full-width mb-3" appearance="outline">
+                  <mat-label>Date fin Max</mat-label>
+                  <input matInput [owlDateTimeTrigger]="dateg2"  [(ngModel)]="selectedReservation.dateFin__gte" [owlDateTime]="dateg2">
+                  <mat-icon matSuffix [owlDateTimeTrigger]="dateg2" class="date-icon">today</mat-icon>
+                  <owl-date-time #dateg2></owl-date-time>
+                </mat-form-field>       </div>
+</div>
+
+   <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 mb-1">
+           <div class="text-inside">
+                <mat-slide-toggle [(ngModel)]="selectedReservation.valid">Valid</mat-slide-toggle>
+           </div>
+   </div>
+
+
+	</div>
+
+	</div>
+
+<div class="btn-sec mt-4">
+  
+  <button class="btn-space" mat-raised-button (click)="search()" color="primary">
+    Search
+  </button>
+  <button mat-raised-button color="warn" (click)="close()" tabindex="-1">
+    Cancel
+  </button>
+
+</div>
+  </div>
